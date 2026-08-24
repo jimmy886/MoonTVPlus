@@ -1,13 +1,19 @@
-
 {
   "headers": [
     {
-      "source": "/api/(.*)",
+      "source": "/fonts/inter-var-latin.woff2",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "*" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron/mtvpls",
+      "schedule": "0 1 * * *"
     }
   ]
 }
